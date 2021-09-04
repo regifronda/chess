@@ -1,0 +1,1 @@
+A ruby program to play chess on the command line.
