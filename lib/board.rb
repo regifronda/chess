@@ -11,6 +11,11 @@ class Board
     grid[row][column] = piece
   end
 
+  def [](location)
+    row, column = location
+    grid[row][column]
+  end
+
   def render
     puts
     @grid.each do |row|
