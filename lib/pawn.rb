@@ -14,6 +14,10 @@ class Pawn
     if 
   end
 
+  def row
+    @location.first
+  end
+
   def column
     @location.last
   end
