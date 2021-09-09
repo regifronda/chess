@@ -16,6 +16,15 @@ class Board
     grid[row][column]
   end
 
+  def out_of_bounds?(location)
+    row, column = location
+
+    row < grid.length && 
+    column < grid.first.length &&
+    row >= 0 &&
+    column >= 0
+  end
+
   def render
     puts
     @grid.each do |row|
