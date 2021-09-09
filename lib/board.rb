@@ -1,13 +1,13 @@
 class Board
-  attr_accessor :board
+  attr_accessor :grid
   
   def initialize
-    @board = Array.new(8) { Array.new(8) }
+    @grid = Array.new(8) { Array.new(8) }
   end
 
   def render
     puts
-    @board.each do |row|
+    @grid.each do |row|
       row.each do |cell|
       cell.nil? ? print("-") : print(cell.to_s)
       end
