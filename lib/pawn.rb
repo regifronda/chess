@@ -13,4 +13,8 @@ class Pawn
   def starting_pos?
     if 
   end
+
+  def column
+    @location.last
+  end
 end
