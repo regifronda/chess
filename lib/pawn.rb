@@ -10,10 +10,10 @@ class Pawn
     ]
   end
 
-  def starting_pos?
-    if 
+  def to_s
+    "♟"
   end
-
+  
   def row
     @location.first
   end
