@@ -1,4 +1,4 @@
-class Bishop
+class Queen
   attr_reader :color
 
   def initialize(color)
@@ -10,6 +10,7 @@ class Bishop
       [0, 1], [1, 1], [1, 0], [0, -1], [1, -1], [-1, 1], [-1, -1], [-1, 0]
     ]
   end
+  
   def to_s
     color == :black ? "♝" : "♗"
   end
