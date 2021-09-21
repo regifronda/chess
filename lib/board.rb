@@ -23,9 +23,9 @@ class Board
 
       board[[row, 2]] = Bishop.new(color)
       board[[row, 5]] = Bishop.new(color)
-
-
     end
+    board[[0, 3]] = King.new(:black)
+    board[[0, 4]] = Queen.new(:black)
 
     board
   end
