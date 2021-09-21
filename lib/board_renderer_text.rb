@@ -9,7 +9,12 @@ class BoardRendererText
     8.times do |row|
       puts "--------------------"
       8.times do |column|
-        print "#{board[[row, column]]} "
+        piece = board[[row, column]]
+        if piece.nil?
+          print '  '
+        else
+          print "#{board[[row, column]]} "
+        end
       end
       puts ""
     end
