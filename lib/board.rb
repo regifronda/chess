@@ -1,10 +1,24 @@
+require_relative './pawn.rb'
+require_relative './rook.rb'
+require_relative './knight.rb'
+require_relative './bishop.rb'
+require_relative './queen.rb'
+require_relative './king.rb'
+
 class Board
   attr_accessor :grid
   
+  def self.start_chess
+    board = self.new
+    8.times do |column|
+      board[[1, column]] = Pawn.new(:black)
+    end
+    board
+  end
+
   def initialize
     @grid = Array.new(8) { Array.new(8) }
   end
-
 
   def []=(location, piece)
     row, column = location
@@ -23,16 +37,5 @@ class Board
     column < grid.first.length &&
     row >= 0 &&
     column >= 0
-  end
-
-  def render
-    puts
-    @grid.each do |row|
-      row.each do |cell|
-      cell.nil? ? print("-") : print(cell.to_s)
-      end
-      puts
-    end
-    puts
   end
 end
