@@ -12,6 +12,7 @@ class Board
     board = self.new
     8.times do |column|
       board[[1, column]] = Pawn.new(:black)
+      board[[6, column]] = Pawn.new(:white)
     end
     board
   end
