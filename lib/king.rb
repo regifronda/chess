@@ -1,4 +1,4 @@
-class King
+class King < Piece
   attr_reader :color
   
   def initialize(color)
@@ -6,11 +6,12 @@ class King
   end
 
   def move_directions
-    [[0, 1], [1, 1], [1, 0], [0, -1], [1, -1], [-1, 1], [-1, -1], [-1, 0]]
+    [
+      [0, 1], [1, 1], [1, 0], [0, -1], [1, -1], [-1, 1], [-1, -1], [-1, 0]
+    ]
   end
 
   def to_s
     color == :black ? "♚" : "♔"
   end
-
 end
