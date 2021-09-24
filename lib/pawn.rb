@@ -1,4 +1,4 @@
-class Pawn
+class Pawn < Piece
   attr_reader :color
   
   def initialize(color)
