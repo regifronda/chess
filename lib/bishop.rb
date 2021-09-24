@@ -1,8 +1,8 @@
-class Bishop
-  attr_reader :color
-
-  def initialize(color)
-    @color = color
+class Bishop < Piece
+  def move_directions
+    [
+      [1, 1], [1, -1], [-1, 1], [-1, -1]
+    ]
   end
 
   def to_s
