@@ -20,14 +20,12 @@ class Rook < Piece
         if board.empty?(loc)
           moves << loc
         end
-        
+
         if enemy?(loc)
           moves << loc
           break
         end
       end
-      # until we hit a piece
-        # add the location + difference in column/row to moves
     end
     moves
   end
