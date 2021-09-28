@@ -48,4 +48,9 @@ class Board
     row >= 0 &&
     column >= 0
   end
+
+  def empty?(location)
+    row, column = location
+    grid[row][column].nil?
+  end
 end
