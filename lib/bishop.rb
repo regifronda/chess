@@ -1,4 +1,6 @@
 class Bishop < Piece
+  include Slideable
+  
   def move_directions
     [
       [1, 1], [1, -1], [-1, 1], [-1, -1]
