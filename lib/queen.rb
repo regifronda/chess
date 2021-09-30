@@ -1,6 +1,6 @@
 class Queen < Piece
-  include Slideable
-  
+  include Slidable
+
   def move_directions
     [
       [0, 1], [1, 1], [1, 0], [0, -1], [1, -1], [-1, 1], [-1, -1], [-1, 0]
