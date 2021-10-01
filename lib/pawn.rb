@@ -1,4 +1,6 @@
 class Pawn < Piece
+  include Stepable
+
   def move_directions
     [[0, 1]]
   end
