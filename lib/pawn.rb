@@ -1,5 +1,7 @@
 class Pawn < Piece
-  include Stepable
+  def forward_direction
+    color == :black ? 1 : -1
+  end  
 
   def move_directions
     [[0, 1]]
