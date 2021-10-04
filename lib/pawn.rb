@@ -3,17 +3,20 @@ class Pawn < Piece
     color == :black ? 1 : -1
   end  
 
+  def at_start?
+    color == :black && current_row == 1 || color == :white && current_row == 6
+  end
+
   def available_moves
     moves = []
 
-    current_row, current_column = location
     one_forward = [current_row + forward_direction, current_column]
     if board.empty?(one_forward)
       moves << one_forward
     end
 
     two_forward = [current_row + (forward_direction * 2), current_column]
-    if board.empty?(two_forward)
+    if board.empty?(two_forward) && board.empty?(one_forward) && at_start?
       moves << two_forward
     end
     
