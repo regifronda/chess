@@ -1,9 +1,11 @@
 class Game
-  attr_reader :player1, :player2, :board
+  attr_reader :player1, :player2, :board, :renderer
   attr_accessor :current_player
 
-  def initialize(board, player1, player2)
+  def initialize(board, player1, player2, renderer)
     @board = board
+    @renderer = renderer
+    renderer.board = board
     @player1 = player1
     @player2 = player2
     @current_player = @player1
