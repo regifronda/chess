@@ -15,12 +15,17 @@ class Game
   end
 
   def play
-    renderer.render
-    puts "It's #{current_player.color}'s turn"
-    take_turn
-    swap_player!
+    while !over?
+      renderer.render
+      puts "It's #{current_player.color}'s turn"
+      take_turn
+      swap_player!
+    end
   end
 
+  def over?
+    false
+  end
   def take_turn
     start_position = nil
 
