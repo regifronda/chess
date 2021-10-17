@@ -26,6 +26,7 @@ class Game
   def over?
     false
   end
+
   def take_turn
     start_position = nil
 
@@ -33,7 +34,7 @@ class Game
       puts "Select a piece to move: "
       start_position = current_player.get_position
       if !board[start_position].nil? && 
-      board[start_position].color == current_player.color
+      board[start_position].color == current _player.color
         break
       end
       puts "Did not select a #{current_player.color} piece"
@@ -46,9 +47,9 @@ class Game
 
       begin
         board.move_piece(start_position, end_position)
+        break
       rescue InvalidMoveError => e
         puts e.message
-      
       end
     end
   end
