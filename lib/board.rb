@@ -54,6 +54,14 @@ class Board
     grid[row][column].nil?
   end
 
+  def in_check?(color)
+    
+  end
+
+  def pieces
+    grid.flatten.reject { |piece| piece.nil? }
+  end
+
   def move_piece(start_position, end_position)
     piece = self[start_position]
     if !piece.available_moves.include?(end_position)
