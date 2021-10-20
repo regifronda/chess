@@ -55,7 +55,21 @@ class Board
   end
 
   def in_check?(color)
+    king = pieces.find { |p| p.color == color && p.is_a?(King) }
+      
+    if king.nil?
+      raise 'No king found.'
+    end
+
+    king_position = king.location
     
+    pieces.select { |p| p.color != color }.each do |piece|
+      if piece.available_moves.include?(king_position)
+        return true
+      end
+    end
+    
+    false
   end
 
   def pieces
