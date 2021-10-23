@@ -68,10 +68,14 @@ class Board
         return true
       end
     end
-    
+
     false
   end
 
+  def checkmate?(color)
+    return false if !in_check?(color)
+    
+  end
   def pieces
     grid.flatten.reject { |piece| piece.nil? }
   end
@@ -90,5 +94,14 @@ class Board
     self[end_position] = piece
 
     piece.location = end_position
+  end
+
+  def dup
+    new_board = Board.new
+    pieces.each do |piece|
+      new_piece = piece.class.new(new_board, piece.location, piece.color)
+      new_board[piece.location] = piece
+    end
+    new_board
   end
 end
