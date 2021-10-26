@@ -74,8 +74,10 @@ class Board
 
   def checkmate?(color)
     return false if !in_check?(color)
-    
+    color_pieces = pieces.select { |p| p.color == color }
+    color_pieces.any? { |piece| piece.safe_moves.empty? }
   end
+
   def pieces
     grid.flatten.reject { |piece| piece.nil? }
   end
@@ -83,24 +85,25 @@ class Board
   def move_piece(start_position, end_position)
     piece = self[start_position]
     if !piece.available_moves.include?(end_position)
-      raise InvalidMoveError.new("End position (#{end_position}) not in available moves: #{piece.available_moves}")
+      raise InvalidMoveError.new("End position (#{end_position}) not in available moves: #{piece.safe_moves}")
     end
     if !in_bounds?(end_position)
       raise InvalidMoveError.new('End position not in bounds')
     end
+    move_piece!(start_position, end_position)
+  end
 
-    self[start_position] = nil
+  def move_piece!(start_position, end_position)
+    self[start_position], self[end_position] = nil, self[start_position]
 
-    self[end_position] = piece
-
-    piece.location = end_position
+    self[end_position].location = end_position
   end
 
   def dup
     new_board = Board.new
     pieces.each do |piece|
       new_piece = piece.class.new(new_board, piece.location, piece.color)
-      new_board[piece.location] = piece
+      new_board[new_piece.location] = new_piece
     end
     new_board
   end
