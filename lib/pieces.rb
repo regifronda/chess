@@ -1,6 +1,7 @@
 require_relative './pieces/piece.rb'
 require_relative './pieces/slidable.rb'
 require_relative './pieces/stepable.rb'
+require_relative './pieces/null_piece.rb'
 require_relative './pieces/pawn.rb'
 require_relative './pieces/rook.rb'
 require_relative './pieces/knight.rb'
