@@ -27,7 +27,7 @@ class Board
   end
 
   def initialize
-    @grid = Array.new(8) { Array.new(8) }
+    @grid = Array.new(8) { Array.new(8, NullPiece.instance) }
   end
 
   def []=(location, piece)
@@ -79,7 +79,7 @@ class Board
   end
 
   def pieces
-    grid.flatten.reject { |piece| piece.nil? }
+    grid.flatten.reject { |piece| piece.is_a?(NullPiece) }
   end
 
   def move_piece(start_position, end_position)
