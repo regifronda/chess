@@ -51,7 +51,7 @@ class Board
 
   def empty?(location)
     row, column = location
-    grid[row][column].nil?
+    grid[row][column] == NullPiece.instance
   end
 
   def in_check?(color)
