@@ -96,7 +96,7 @@ class Board
   end
 
   def move_piece!(start_position, end_position)
-    self[start_position], self[end_position] = nil, self[start_position]
+    self[start_position], self[end_position] = NullPiece.instance, self[start_position]
 
     self[end_position].location = end_position
   end
