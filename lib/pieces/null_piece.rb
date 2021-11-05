@@ -7,4 +7,6 @@ class NullPiece
     " "
   end
   
+  def color
+  end
 end
