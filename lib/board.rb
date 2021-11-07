@@ -8,16 +8,7 @@ class Board
       board[[6, column]] = Pawn.new(board, [6, column],:white)
     end
 
-    [
-      Rook,
-      Knight,
-      Bishop,
-      Queen,
-      King,
-      Bishop,
-      Knight,
-      Rook
-    ].each_with_index do |piece_klass, column|
+    [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook].each_with_index do |piece_klass, column|
       [[0, :black], [7, :white]].each do |(row, color)|
         location = [row, column]
         board[location] = piece_klass.new(
