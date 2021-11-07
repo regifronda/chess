@@ -27,23 +27,6 @@ class Board
         )
       end
     end
-
-    # [[0, :black], [7, :white]].each do |(row, color)|
-      # board[[row, 0]] = Rook.new(board, [row, 0], color)
-      # board[[row, 7]] = Rook.new(board, [row, 7], color)
-
-      # board[[row, 1]] = Knight.new(board, [row, 1], color)
-      # board[[row, 6]] = Knight.new(board, [row, 6], color)
-
-      # board[[row, 2]] = Bishop.new(board, [row, 2], color)
-      # board[[row, 5]] = Bishop.new(board, [row, 5], color)
-    # end
-    # board[[0, 3]] = King.new(board, [0, 3], :black)
-    # board[[0, 4]] = Queen.new(board, [0, 4], :black)
-
-    # board[[7, 3]] = King.new(board, [7, 3], :white)
-    # board[[7, 4]] = Queen.new(board, [7, 4], :white)
-
     board
   end
 
